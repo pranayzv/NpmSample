@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import myCodeHook from '@pzv/my-code-pkg';
 
 function App() {
+  const [isOn, setIsOn] = myCodeHook();
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={()=> setIsOn(isOn => !isOn) } >Is Active : {`${isOn}`}</button>
       </header>
     </div>
   );
